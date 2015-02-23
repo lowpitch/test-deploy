@@ -7,5 +7,5 @@ build:
     - npm-install
     # A step that executes `npm test` command
     - npm-test
-    #- hgen/gulp:
+    - hgen/gulp:
 	#tasks: production
