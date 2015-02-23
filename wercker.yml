@@ -8,4 +8,4 @@ build:
     # A step that executes `npm test` command
     - npm-test
     - hgen/gulp:
-      tasks: "production"
+        tasks: production
