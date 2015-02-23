@@ -1,0 +1,141 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+// Base variables
+// -------------------------
+$padding-base =                        18px;
+
+
+
+// Colours
+// -------------------------
+$white =                               #fff;
+$black =                               #000;
+$red =                                 #fb0035;
+$grey =                                #ccc;
+$lightGrey =                           #e8e8e7;
+$yellow =                              #e6bc53;
+$purple =                              #381d2a;
+$pink =                                #843f61;
+$brown =                               #a29776;
+$light-brown =                         #beb28f;
+$overlay-background =                  rgba(#555145,0.8);
+$text-col =                            #ebe5d1;
+
+// Typography
+// -------------------------
+$font-family =                         "arno-pro",serif;
+$font-family-base =                    Helvetica, Arial, sans-serif;
+
+$font-size-base =                      16px;
+$font-size-tiny =                      ceil($font-size-base * 0.62);  // ~10px
+$font-size-small =                     ceil($font-size-base * 0.875); // ~14px
+$font-size-medium =                    $font-size-base;               // ~16px
+$font-size-medium-plus =               ceil($font-size-base * 1.125);  // ~18px
+$font-size-large =                     ceil($font-size-base * 1.5);  // ~24px
+
+$font-size-base-mobile =                      16px;
+$font-size-tiny-mobile =                      ceil($font-size-base-mobile * 0.62);  // ~10px
+$font-size-small-mobile =                     ceil($font-size-base-mobile * 0.875); // ~14px
+$font-size-medium-mobile =                    $font-size-base-mobile;               // ~16px
+$font-size-medium-plus-mobile =               ceil($font-size-base-mobile * 1.125);  // ~18px
+$font-size-large-mobile =                     ceil($font-size-base-mobile * 1.5);  // ~24px
+
+$line-height-base =                    1.1; // (didn't use a unit on purpose)
+
+$heading-font-family =                 'alternate-gothic-no-3-d', $font-family-base;
+$heading-font-weight =                 100;
+$heading-line-height =                 1.2;
+
+$heading-size-small =                  ceil($font-size-base * 1.5);   // ~24px
+$heading-size-medium =                 ceil($font-size-base * 1.75);  // ~28px
+$heading-size-large =                  ceil($font-size-base * 2.25);     // ~48px
+
+
+$menu-height = 40px;
+
+$title-font-family =                   'alternate-gothic-no-3-d', $font-family-base;
+$subtitle-font-family =                'franklin-gothic-urw', $font-family-base;
+
+
+// dot Colours
+$video-color = #7b3d39;
+$article-color = #e5ad67;
+$poster-color = #397a6f;
+$text-color = #d6c8c9;
+$on-this-day-color = #555145;
+$document-color = #723953;
+$photo-color = #476a90;
+$gallery-color = #476a90;
+$debate-color = #ebe4d1;
+$letter-color = #8e6047;
+
+
+// Media queries breakpoints
+// --------------------------------------------------
+
+// We assume large screen above this - Desktop
+$screen-large =                        767px;
+$screen-desktop =                      $screen-large;
+
+// The max width of the grid on larger screens
+$screen-max-desktop =                  984px;
+
+$medium-navigation-above =           880px;
+$big-navigation-above =              984px;
+$huge-navigation-above =             1250px;
+
+
+
+
+// Grid system
+// --------------------------------------------------
+
+// Number of columns in the grid system
+$grid-columns ?=                       12;
+// Padding, to be divided by two and applied to the left and right of all columns
+$grid-gutter-width ?=                  12px;
+$grid-verticle-base ?=                 12px;
+
+
+
+// Stylus Extras
+// --------------------------------------------------
+
+// Variables need to be passed after @media declarations
+// Media Helpers
+
+minWidth(width) {
+  '(min-width:' + width + ')';
+}
+
+maxWidth(width) {
+  '(max-width:' + width + ')';
+}
+
+
+
+// Commonly used @media variables
+$media-min-desktop = minWidth($screen-large);
+$media-smaller-desktop = maxWidth($screen-max-desktop);
+$media-phone = maxWidth($screen-large);
+$media-big-phone = "(min-width:550px) and (max-width:767px)";
+$media-huge-nav = minWidth($huge-navigation-above);
+$media-big-nav = minWidth($big-navigation-above);
+$media-medium-nav = minWidth($medium-navigation-above);
+
+
+
+
+// Z Index of elements
+// --------------------------------------------------
+
+$z-video =                             0;
+$z-video-overlay =                     100;
+$z-nav =                               200;
+
+
+
+

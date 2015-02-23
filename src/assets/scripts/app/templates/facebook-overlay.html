@@ -1,0 +1,57 @@
+<div class='social'>
+  <div class='fb-icon-image text-centre'><img src='/assets/media/social/<%= icon%>' /></div>
+  <div class='subheading'>Social Graph</div>
+  <div class='heading-large shout social-title'><%= title%></div>
+  <div class='heading-medium shout social-title'>You have <%= friend_count%> friends on Facebook</div>
+
+  <%
+  for (var i =0 ; i <sections.length;i++)
+    {
+    var currSection = sections[i];
+  %>
+    <div class='social-section social-section-<%=i%>'>
+       <% if (i==0) { %>
+      <a class='btn facebook-btn facebook-continue' href='#'>Return to the action</a>
+  <% } %>
+
+
+
+      <p class='emphasis'><%= currSection.subtitle %></p>
+
+
+      <div class='container stat-container'>
+
+            <% for (var j=0; j<currSection.stats.length; j++) {
+              var stat = currSection.stats[j];
+              %>
+              <div class='row stat-row hidden-stat-row'>
+                <div class='col5 text-right bar-column'>
+                  <div class='bar' data-width='<%= stat.value %>'><span  style='width:<%= stat.value %>%;'></span></div>
+                </div>
+                <div class='col2 text-centre count-column'>
+                  <%= Math.round (stat.value * friend_count / 100) %>
+                </div>
+                <div class='col5 text-left label-column'>
+                  <%= stat.label %>
+                </div>
+              </div>
+            <% } %>
+
+        <% if (currSection.after != '') { %>
+        <div class='after text-italic'>
+          <%= currSection.after %>
+           <% if (i+1==sections.length) { %>
+            <p><a href='#' class='facebook-disconnect'>Disconnect your Facebook account</a></p>
+           <% } %>
+        </div>
+      <% } %>
+
+
+      </div>
+
+    </div>
+<%  }   %>
+
+
+</div>
+<div class='close icon-close'></div>

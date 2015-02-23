@@ -1,0 +1,9 @@
+# Pals repository ignores
+
+# ignore the node_modules from grunt
+node_modules
+bower_components
+
+# ignore the deploy dist
+dist
+

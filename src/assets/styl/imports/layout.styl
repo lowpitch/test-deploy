@@ -1,0 +1,280 @@
+//
+// Layout
+// --------------------------------------------------
+
+.layout-video {
+    margin: 0 auto 0 auto;
+    // max-width: 1340px; // 1440px
+    position: relative;
+    height:100%;
+
+    &.buffering {
+      opacity:0.3;
+    }
+
+}
+
+
+.ipad {
+  .buffering-video {
+    display:none !important;
+  }
+}
+.buffering-video {
+  position:absolute;
+  top:0; left:0; right:0; bottom:0;
+  background:rgba(0,0,0,0.6);
+
+  visibility:hidden;
+  opacity:0;
+  transition:opacity 0.5s;
+
+  &.buffering {
+    visibility:visible;
+    opacity:1;
+  }
+  .image-wrapper {
+    width:72px; height:72px;
+    background:black;
+    padding:20px;
+    border-radius:10px;
+    position:absolute;
+    top:50%; left:50%;
+    margin-left:-36px;
+    margin-top:-36px;
+  }
+}
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+
+  #video .logo-block ul {
+    display:none !important;
+  }
+
+}
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape) {
+    #video .logo-block ul {
+    display:none !important;
+  }
+
+}
+
+
+.logos {
+  margin:80px 0 50px;
+
+  .heading-medium {
+    text-transform:none;
+  }
+  .se-link {
+    margin-right:20px;
+  }
+  .iwonder-link {
+    padding-top:50px
+    margin-left:20px;
+
+  }
+}
+.logos img {
+  width:186px;
+}
+#video {
+  .logo-block {
+    position:absolute;
+    z-index:15;
+    top:30px;
+    left:30px;
+    width:164px;
+
+    height:auto;
+
+    cursor:pointer;
+    transition:border-color 0.3s;
+
+
+
+    ul {
+      height:0;
+      overflow:hidden;
+
+    }
+
+    li {
+      opacity:0;
+      transition:opacity 0.5s;
+
+    }
+
+    .item-title {
+      display: block;
+      font-size:22px;
+      line-height:23px;
+
+      font-family: $title-font-family;
+      color: #ebe5d1;
+
+
+      a {
+
+        border-left:0px solid transparent;
+
+
+        transition:color 0.1s, border-width 0.3s, padding-left 0.3s;
+        margin-left:0;
+        color: white;
+        display:block;
+        padding:3px 0 3px 0px;
+
+        subtle-shadow();
+
+        em {
+          font-style:normal;
+          readable-shadow(rgba(0,0,0,0.5));
+        }
+        span {
+          color: #a29776;
+          font-family: $subtitle-font-family;
+          text-transform:uppercase;
+          font-size:12px;
+          line-height:14px;
+          padding-top:2px;
+          display:block;
+        }
+      }
+
+
+    }
+
+    .item-title a:hover  {
+     border-left:9px solid $pink;
+     padding-left:5px;
+
+    }
+
+
+    &:hover {
+
+
+      ul {
+
+        height:auto;
+
+      }
+
+      li {
+        opacity:1;
+
+        &.section-2 {
+          transition-delay:0.05s;
+        }
+
+        &.section-3 {
+          transition-delay:0.1s;
+        }
+
+        &.section-4 {
+          transition-delay:0.15s;
+        }
+
+        &.section-5 {
+          transition-delay:0.2s;
+        }
+         &.section-6 {
+          transition-delay:0.25s;
+        }
+      }
+    }
+  }
+}
+
+#archive  {
+  position:absolute;
+  top:0; left:0; right:0; height:100%;
+  background:$overlay-background;
+  overflow:hidden;
+  z-index:300;
+
+  .archive, .outer-container, .row-section {
+    height:100%;
+    overflow:hidden;
+  }
+
+  .outer-container {
+     padding-bottom:80px;
+  }
+  .archive-items {
+    padding-top:40px;
+
+    -webkit-overflow-scrolling: touch;
+
+     -webkit-backface-visibility: hidden;
+    // padding-right:10px;
+    height:100%;
+    overflow-x:hidden;
+    overflow-y:auto;
+
+
+
+
+  }
+}
+
+
+
+
+
+.layout-overvideo {
+    position: absolute;
+    top:0;
+    z-index: $z-video-overlay;
+    width: 100%;
+}
+
+.layout-largehead {
+
+    //padding-top: 36px;
+}
+
+.home-logo {
+  position:absolute;
+  text-align:center;
+  width:100%;
+  top:8%;
+}
+
+img.footballers-logo {
+    width: 47%;
+
+}
+
+@media $media-smaller-desktop {
+  img.footballers-logo {
+    width: 33%;
+
+}
+}
+
+.home-logo img {
+  margin-bottom:2%;
+}
+
+.overlay {
+  position:absolute;
+  width:100%;
+
+  bottom:130px;
+
+
+}
+
+.texture {
+  background:url(/assets/images/texture.jpg) top left repeat;
+}
+
+// .footer {
+//     margin-top: 3em;
+// }
+
+.pad-for-nav {
+  padding-bottom:80px;
+}

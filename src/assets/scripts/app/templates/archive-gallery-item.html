@@ -1,0 +1,79 @@
+<div data-id='<%= id%>' class="row row-padded archive-item archive-gallery item<%= id%> below-scroll">
+
+      <div class='meta col4'>
+        <h4 class="subheading-small archive-type"><span class='type-icon icon-<%= media.typeSlug %>'></span><%= media.type %></h4>
+        <h3 class="date heading-small"><%= date %></h3>
+        <h2 class="heading-large"><%= title %></h2>
+        <% if (typeof(credit) != "undefined" && credit != "") { %>
+        <div class='credit text-medium-plus text-italic'>Credit: <%= credit %></div>
+        <% } %>
+        <div class='share'>
+          <div class='share-icon icon-facebook' data-url='/%23section/<%= section%>/archive/<%= id%>'></div>
+          <div class='share-icon icon-twitter' data-url='/%23section/<%= section%>/archive/<%= id%>'></div>
+        </div>
+        <div class='play-from-here subheading-small hide-mobile' data-start='<%= timecode[0].start %>'>
+          <span class='type-icon icon-video'></span>
+        </div>
+
+
+      </div>
+
+    <div class="col8 archive-content gallery">
+        <!-- <h3 class="subheading-large"><%= media.type %></h3>
+        <h2 class="heading-large"><%= title %></h2> -->
+        <% if (typeof(text1) != "undefined" && text1 != "") { %>
+          <p class="text-large"><%= text1 %></p>
+        <% } %>
+        <div class='row row-padded'>
+          <% if (typeof(media.media1) != "undefined" && media.media1 != "") { %>
+            <div class='col6 text-centre img-holder row-padded'>
+              <img src="/assets/media/section-<%= section%>/archive/<%= media.media1 %>" />
+            </div>
+          <% } %>
+          <% if (typeof(media.media2) != "undefined" && media.media2 != "") { %>
+            <div class='col6 text-centre img-holder row-padded'>
+              <img src="/assets/media/section-<%= section%>/archive/<%= media.media2 %>" />
+            </div>
+          <% } %>
+          <% if (typeof(media.media3) != "undefined" && media.media3 != "") { %>
+            <div class='col6 text-centre img-holder row-padded'>
+              <img src="/assets/media/section-<%= section%>/archive/<%= media.media3 %>" />
+            </div>
+          <% } %>
+          <% if (typeof(media.media4) != "undefined" && media.media4 != "") { %>
+            <div class='col6 text-centre img-holder row-padded'>
+              <img src="/assets/media/section-<%= section%>/archive/<%= media.media4 %>" />
+            </div>
+          <% } %>
+          <% if (typeof(media.media5) != "undefined" && media.media5 != "") { %>
+            <div class='col6 text-centre img-holder row-padded'>
+              <img src="/assets/media/section-<%= section%>/archive/<%= media.media5 %>" />
+            </div>
+          <% } %>
+          <% if (typeof(media.media6) != "undefined" && media.media6 != "") { %>
+            <div class='col6 text-centre img-holder row-padded'>
+              <img src="/assets/media/section-<%= section%>/archive/<%= media.media6 %>" />
+            </div>
+          <% } %>
+          <% if (typeof(media.media7) != "undefined" && media.media7 != "") { %>
+            <div class='col6 text-centre img-holder row-padded'>
+              <img src="/assets/media/section-<%= section%>/archive/<%= media.media7 %>" />
+            </div>
+          <% } %>
+          <% if (typeof(media.media8) != "undefined" && media.media8 != "") { %>
+            <div class='col6 text-centre img-holder row-padded'>
+              <img src="/assets/media/section-<%= section%>/archive/<%= media.media8 %>" />
+            </div>
+          <% } %>
+      </div>
+        <% if (typeof(text2) != "undefined" && text2 != "") { %>
+          <p class="text-large"><%= text2 %></p>
+        <% } %>
+
+
+        <% if (typeof(media.url) != "undefined" && media.url != "" && typeof(media.url_text) != "undefined" && media.url_text != "") { %>
+          <p class="text-large"><a href='<%= media.url %>' target='_blank'><%= media.url_text %></a></p>
+        <% } %>
+
+    </div>
+</div>

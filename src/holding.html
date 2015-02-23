@@ -1,0 +1,68 @@
+<!doctype html>
+<html class="no-js" lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Footballers United</title>
+    <!-- @if NODE_ENV='local' -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/images.css">
+    <!-- @endif -->
+    <!-- @if NODE_ENV='dev' -->
+    <link rel="stylesheet" href="assets/css/styles.<!-- @echo versionHash -->.min.css">
+    <link rel="stylesheet" href="assets/css/images.<!-- @echo versionHash -->.min.css">
+    <!-- @endif -->
+    <!-- @if NODE_ENV='staging' -->
+    <link rel="stylesheet" href="assets/css/styles.<!-- @echo versionHash -->.min.css">
+    <link rel="stylesheet" href="assets/css/images.<!-- @echo versionHash -->.min.css">
+    <!-- @endif -->
+    <!-- @if NODE_ENV='production' -->
+    <link rel="stylesheet" href="assets/css/styles.<!-- @echo versionHash -->.min.css">
+    <link rel="stylesheet" href="assets/css/images.<!-- @echo versionHash -->.min.css">
+    <!-- @endif -->
+    <script type="text/javascript">
+    // Async Typekit FTW!
+    (function(d) {
+    var config = {
+    kitId: 'tpo4fdh',
+    scriptTimeout: 3000
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+    </script>
+  </head>
+  <body>
+    <div id="pals-app" role="main" class='texture'>
+      <div class="layout-overvideo">
+        <div id="home">
+          <div class="layout-largehead">
+            <header class='header'>
+              <img class='masthead' src='/assets/images/home-masthead.jpg' />
+              <div class='home-logo'>
+                <div class='container'>
+                  <div class='logo-wrap'>
+                    <img class='footballers-logo' src='/assets/images/logo.png' />
+                  </div>
+                  <div class='row pad-top-mobile'>
+                    <div class='col6 col3-offset'>
+                      <div class="subheading">How football and friendship got people fighting</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </header>
+            <div class=''>
+              <div class='container'>
+                <div class='row row-padded-top-and-bottom '>
+                  <div class='col12pad-bottom-mobile text-centre text-large'>
+                    <p class='emphasis'>Coming soon</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+  </html>

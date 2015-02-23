@@ -1,0 +1,124 @@
+#notifications {
+  position:absolute;
+  bottom:95px;
+  left:20px;
+ right:20px;
+  height:300px;
+  transition: bottom 300ms,left 300ms ease-out;
+
+  z-index:-1;
+  &.raise, &.paused {
+    bottom:175px;
+  }
+
+
+}
+
+.facebooknotify {
+  height:220px; width:280px;
+  background:rgba($light-brown,0.7);
+  cursor:pointer;
+  margin-bottom:5px;
+  border-radius:15px;
+
+  // box-shadow: 2px 2px 5px rgba(0,0,0,0.3),
+  //           10px 10px 15px rgba(0,0,0,0.3),
+  //           -1px -1px 30px rgba(0,0,0,0.15);
+
+  transition:background 0.3s;
+
+  &:hover {
+    background:rgba(#756d55,0.7);
+  }
+
+  .icon-facebook {
+    border:none;
+    font-size:34px !important;
+    text-shadow:none !important;
+
+    &:before {
+      border:none !important;
+      text-shadow:none !important;
+    }
+  }
+
+  .info {
+    padding-top:40px !important;
+  }
+
+  .subheading {
+    margin-top:-10px;
+  }
+
+  .heading-medium {
+    line-height:1;
+  }
+}
+
+
+// Notifications
+// -------------------------
+.notify {
+    position: absolute;
+    bottom: -200px;
+    left: 0px;
+    opacity: 0;
+
+
+
+    &.quiet {
+
+      box-shadow:none;
+      bottom:auto !important;
+      top:0;
+      right:0; left:auto;
+      z-index:50;
+      readable-shadow(rgba(0,0,0,0.5));
+      cursor:pointer;
+    }
+
+    span {
+      position:absolute; top:5px; left:4px;
+    }
+
+    .info {
+      position:absolute;
+      top:0; right:0; left:0; bottom:0;
+      text-align:center;
+      padding-top:60px;
+      z-index:300;
+
+    }
+
+    .type-icon {
+      margin-bottom:15px;
+    }
+
+    .type-icon:before {
+      text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.8), 0px -1px 0px rgba(0,0,0,0.8),1px 0px 0px rgba(0, 0, 0, 0.8), -1px 0px 0px rgba(0,0,0,0.8);
+      padding:10px;
+      border-radius:100%;
+      border:1px solid white;
+    }
+
+    .heading-medium {
+      display:inline-block;
+    }
+
+  // &.align-left {
+  //   .info {
+  //     text-align:left;
+
+  //   }
+  // }
+}
+
+.over-holder .notify {
+  bottom:0;
+}
+
+
+//  #notifications {
+//   bottom:180px;
+
+// }

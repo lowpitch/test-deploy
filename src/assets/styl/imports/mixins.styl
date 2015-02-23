@@ -1,0 +1,44 @@
+//
+// Mixins
+// --------------------------------------------------
+
+
+// Non supported LESS functions
+percentage(n1, n2) {
+  unit((n1/n2)*100, "%")
+}
+
+
+// Grid System
+// -----------
+
+// Centered container element
+container-fixed(gutter = $grid-gutter-width) {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left:  (gutter / 2);
+  padding-right: (gutter / 2);
+  clearfix();
+
+  // wider container size on larger screens
+  @media $media-min-desktop {
+    padding-left:  ($grid-gutter-width);
+    padding-right: ($grid-gutter-width);
+  }
+}
+
+// Creates a wrapper for a series of columns
+make-row(gutter = $grid-gutter-width) {
+  margin-left:  (gutter / -2);
+  margin-right: (gutter / -2);
+  clearfix();
+}
+
+subtle-shadow() {
+  text-shadow:1px 1px 1px rgba(0,0,0,0.6);
+}
+readable-shadow(color) {
+  text-shadow: 1px 0px 0px color, 1px 1px 0px color, 0px 1px 0px color,
+    -1px 1px 0px color, -1px 0px 0px color, -1px -1px 0px color,
+    0px -1px 0px color, 1px -1px 0px color;
+}

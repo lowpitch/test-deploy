@@ -1,0 +1,195 @@
+//
+// Icons
+// --------------------------------------------------
+
+$ico {
+    display: inline-block;
+    text-decoration: none;
+    text-indent: -1000em;
+    height: 35px;
+    width: 35px;
+    border: solid 1px $white;
+    border-radius: 50%;
+    transition: all 300ms;
+
+    &:hover {
+        // border-color: $purple;
+        background: $purple;
+    }
+
+
+}
+
+.section:hover .icon-play-large {
+    // background: $purple;
+}
+
+.icon-play-large {
+    @extends $ico;
+    height: 86px;
+    width: 86px;
+    border: solid 2px $white;
+    position: relative;
+
+    // to make a rounded corner triangle I used this slightly mental but awesome technique
+    // http://stackoverflow.com/a/14451916
+
+    span {
+        position: absolute;
+        top: 30px;
+        left: 31px;
+        background-color: $white;
+        text-align: left;
+        display: block;
+        transition: all 300ms;
+    }
+    span:before,
+    span:after {
+        content: '';
+        position: absolute;
+        background-color: inherit;
+    }
+    span,
+    span:before,
+    span:after {
+        width:  14px;
+        height: 14px;
+        border-top-right-radius: 30%;
+    }
+    span {
+        transform: rotate(-90deg) skewX(-30deg) scale(1,.866);
+    }
+    span:before {
+        transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
+    }
+    span:after {
+        transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
+    }
+
+    &:hover span {
+        // background: $purple;
+    }
+
+    // &:active {
+    //     span {
+    //         left: 25px;
+    //     }
+    // }
+}
+
+@media $media-smaller-desktop {
+    .icon-play-large {
+        height:66px; width: 66px;
+
+        span {
+            top:21px;
+            left:22px;
+        }
+    }
+}
+
+
+.icon-play {
+    @extends .icon-play-large;
+    height: 35px;
+    width: 35px;
+    border-width: 1px;
+
+    span {
+        top: 11px;
+        left: 11px;
+    }
+    span,
+    span:before,
+    span:after {
+        width:  8px;
+        height: 8px;
+    }
+
+    &:active {
+        span {
+            left: 13px;
+        }
+    }
+}
+
+
+.icon-skip-next {
+    @extends $ico;
+    height: 64px;
+    width: 48px;
+    text-indent: -1000em;
+    position: relative;
+    border: none;
+
+    &:hover:after {
+        border-color: $red;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        height: 15px;
+        width: 15px;
+        position: absolute;
+        top: 25px;
+        left: 13px;
+        border-right: solid 3px $white;
+        border-top: solid 3px $white;
+        transform: rotate(45deg);
+        transition border 300ms;
+    }
+}
+
+.icon-skip-prev {
+    @extends .icon-skip-next;
+
+    &::after {
+        border: none;
+        left: 20px;
+        border-left: solid 3px $white;
+        border-bottom: solid 3px $white;
+    }
+}
+
+.icon-image,
+.icon-time,
+.icon-head,
+.icon-chat,
+.icon-vol_on,
+.icon-vol_off,
+.icon-share {
+    @extends $ico;
+    padding: 8px 0 0 9px;
+    text-indent: 0;
+}
+
+.icon-image.selected,
+.icon-time.selected,
+.icon-head.selected,
+.icon-chat.selected,
+.icon-vol_on.selected,
+.icon-vol_off.selected,
+.icon-share.selected {
+    color: $red;
+    border-color: $red;
+}
+
+.icon-chat {
+    padding: 9px 0 0 7px;
+}
+
+// no circle
+.icon-vol_on,
+.icon-vol_off,
+.icon-share {
+    border: none;
+}
+
+
+
+
+
+
+
+

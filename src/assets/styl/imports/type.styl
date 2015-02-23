@@ -1,0 +1,150 @@
+//
+// Type
+// --------------------------------------------------
+
+
+// Headings
+// -------------------------
+
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+$heading {
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
+    line-height: $heading-line-height;
+    margin-top: 0;
+    // margin-bottom: 0.5em;
+    display: block;
+
+
+
+}
+
+.add-shadow {
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.8), 0px -1px 0px rgba(0,0,0,0.8),1px 0px 0px rgba(0, 0, 0, 0.8), -1px 0px 0px rgba(0,0,0,0.8);
+}
+
+.heading-small {
+    @extends $heading;
+    // font-family: $title-font-family;
+    font-size: $heading-size-small;
+}
+.heading-medium {
+    @extends $heading;
+    font-size: $heading-size-medium;
+    text-transform:uppercase;
+}
+.heading-large {
+    @extends $heading;
+    font-size: $heading-size-large;
+      text-transform:uppercase;
+}
+.shout {
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+.subheading {
+    @extends $heading;
+    font-size: $font-size-small;
+    font-family: $subtitle-font-family;
+
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.subheading-padded {
+    line-height:30px;
+}
+.subheading-large {
+    @extends .subheading;
+    font-size: $font-size-small;
+}
+
+.subheading-small {
+    @extends .subheading;
+    font-size: $font-size-small;
+}
+
+.text-italic {
+    font-style:italic;
+}
+
+.emphasis {
+    font-size:27px;
+    line-height:29px;
+    font-style:italic;
+    color:#d6c8c9;
+}
+
+.intro-description {
+    font-size:23px;
+    line-height:25px;
+
+     color:#d6c8c9;
+
+     a {
+        font-style:italic;
+        color:#c97dab;
+     }
+}
+
+
+// Alignment
+// -------------------------
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.text-centre {
+    text-align: center;
+}
+
+
+// Text sizes
+// -------------------------
+.text-small {
+    font-size: $font-size-small;
+    line-height: ($line-height-base + 0.3);
+}
+.text-medium {
+    font-size: $font-size-medium;
+
+}
+.text-medium-plus {
+    font-size: $font-size-medium-plus;
+}
+
+.text-large {
+    font-size: $font-size-large;
+}
+
+
+// Text styles
+// -------------------------
+.text-upper {
+    text-transform: uppercase;
+}
+.text-bold {
+    font-weight: bold;
+}
+.text-italic {
+    font-style:italic;
+}
+
+// Text colours
+// -------------------------
+.text-white {
+    color: $white;
+}
+.text-black {
+    color: $black;
+}
+.text-grey {
+    color: $grey;
+}

@@ -1,0 +1,354 @@
+//
+// Grid system
+// --------------------------------------------------
+
+
+// Set the container width, and override it for fixed navbars in media queries
+.container, .container-nav {
+  container-fixed();
+}
+
+.container-nav {
+  padding-left:0;
+  padding-right:0;
+}
+
+// mobile first defaults
+.row {
+  make-row();
+}
+
+.row-padded {
+  margin-bottom: $grid-verticle-base;
+}
+
+.row-padded-double {
+  margin-bottom: ($grid-verticle-base * 2);
+}
+
+.row-padded-top-and-bottom {
+    padding-top:36px;
+    padding-bottom:36px;
+}
+
+
+.row-padded-top-only {
+    padding-top:36px;
+
+}
+
+.row-padded-bottom {
+
+  padding-bottom:18px;
+}
+
+.no-pad-left {
+  padding-left:0;
+}
+
+.no-pad-bottom {
+  padding-bottom:0;
+}
+
+.row-padded-top-with-border {
+    border-top:1px solid black;
+    padding:30px 0;
+}
+
+.row-padded-top-with-no-border {
+    padding:30px 0;
+}
+
+.relative {
+  position:relative;
+}
+
+.mobile-pad {
+  padding:5px 10px 2px;
+}
+
+
+// .row-padded-tripple {
+//   margin-bottom: ($grid-verticle-base * 3);
+// }
+
+.row-section {
+  margin-bottom: ($grid-verticle-base * 10);
+}
+
+@media $media-min-desktop {
+  .extra-left-padded {
+    padding-left: ($grid-gutter-width /4);
+  }
+  .extra-top-padded {
+   padding-top: ($grid-gutter-width /4);
+  }
+
+   /* Let's get this party started */
+.archive-items::-webkit-scrollbar, #facebook-overlay::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+.archive-items::-webkit-scrollbar-track, #facebook-overlay::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+
+}
+
+/* Handle */
+.archive-items::-webkit-scrollbar-thumb, #facebook-overlay::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba($pink,1);
+    min-height:50px;
+    // -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+ #facebook-overlay::-webkit-scrollbar-thumb  {
+  background:#a29776;
+  border-radius:0;
+ }
+.archive-items::-webkit-scrollbar-thumb:window-inactive, #facebook-overlay::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba($pink,0.4);
+}
+
+}
+
+// Common styles for small and large grid columns
+.col1,
+.col2,
+.col3,
+.col4,
+.col5,
+.col6,
+.col7,
+.col8,
+.col9,
+.col10,
+.col11,
+.col12,
+.col1-small,
+.col2-small,
+.col3-small,
+.col4-small,
+.col5-small,
+.col6-small,
+.col7-small,
+.col8-small,
+.col9-small,
+.col10-small,
+.col11-small,
+.col12-small {
+  position: relative;
+  // Prevent columns from collapsing when empty
+  min-height: 1px;
+  // Inner gutter via padding
+  padding-left:  ($grid-gutter-width / 2);
+  padding-right: ($grid-gutter-width / 2);
+}
+
+.col12, .col12-small {
+  padding-right:0;
+}
+
+// show-grid for debug only
+.show-grid .col1,
+.show-grid .col2,
+.show-grid .col3,
+.show-grid .col4,
+.show-grid .col5,
+.show-grid .col6,
+.show-grid .col7,
+.show-grid .col8,
+.show-grid .col9,
+.show-grid .col10,
+.show-grid .col11,
+.show-grid .col12,
+.show-grid .col1-small,
+.show-grid .col2-small,
+.show-grid .col3-small,
+.show-grid .col4-small,
+.show-grid .col5-small,
+.show-grid .col6-small,
+.show-grid .col7-small,
+.show-grid .col8-small,
+.show-grid .col9-small,
+.show-grid .col10-small,
+.show-grid .col11-small,
+.show-grid .col12-small {
+    border-radius: 5px;
+    background: #e0e0e0;
+    background: rgba(red,0.5);
+}
+.show-content {
+    background: rgba(red, 0.5);
+    display: block;
+}
+
+
+
+// Small grid
+//
+// Columns, offsets, pushes, and pulls for the small device range, from phones
+// to tablets.
+//
+// Note that `.col12-small` doesn't get floated on purpose—there's no need since
+// it's full-width.
+
+@media $media-phone {
+
+  .col1-small,
+  .col2-small,
+  .col3-small,
+  .col4-small,
+  .col5-small,
+  .col6-small,
+  .col7-small,
+  .col8-small,
+  .col9-small,
+  .col10-small,
+  .col11-small{
+    float: left;
+  }
+  .col1-small  { width: percentage(1, $grid-columns); }
+  .col2-small  { width: percentage(2, $grid-columns); }
+  .col3-small  { width: percentage(3, $grid-columns); }
+  .col4-small  { width: percentage(4, $grid-columns); }
+  .col5-small  { width: percentage(5, $grid-columns); }
+  .col6-small  { width: percentage(6, $grid-columns); }
+  .col7-small  { width: percentage(7, $grid-columns); }
+  .col8-small  { width: percentage(8, $grid-columns); }
+  .col9-small  { width: percentage(9, $grid-columns); }
+  .col10-small { width: percentage(10, $grid-columns); }
+  .col11-small { width: percentage(11, $grid-columns); }
+  .col12-small { width: 100%; }
+
+  // Push and pull columns for source order changes
+  .col1-small-push  { left: percentage(1, $grid-columns); }
+  .col2-small-push  { left: percentage(2, $grid-columns); }
+  .col3-small-push  { left: percentage(3, $grid-columns); }
+  .col4-small-push  { left: percentage(4, $grid-columns); }
+  .col5-small-push  { left: percentage(5, $grid-columns); }
+  .col6-small-push  { left: percentage(6, $grid-columns); }
+  .col7-small-push  { left: percentage(7, $grid-columns); }
+  .col8-small-push  { left: percentage(8, $grid-columns); }
+  .col9-small-push  { left: percentage(9, $grid-columns); }
+  .col10-small-push { left: percentage(10, $grid-columns); }
+  .col11-small-push { left: percentage(11, $grid-columns); }
+
+  .col1-small-pull  { right: percentage(1, $grid-columns); }
+  .col2-small-pull  { right: percentage(2, $grid-columns); }
+  .col3-small-pull  { right: percentage(3, $grid-columns); }
+  .col4-small-pull  { right: percentage(4, $grid-columns); }
+  .col5-small-pull  { right: percentage(5, $grid-columns); }
+  .col6-small-pull  { right: percentage(6, $grid-columns); }
+  .col7-small-pull  { right: percentage(7, $grid-columns); }
+  .col8-small-pull  { right: percentage(8, $grid-columns); }
+  .col9-small-pull  { right: percentage(9, $grid-columns); }
+  .col10-small-pull { right: percentage(10, $grid-columns); }
+  .col11-small-pull { right: percentage(11, $grid-columns); }
+
+  // Offsets
+  .col1-small-offset  { margin-left: percentage(1, $grid-columns); }
+  .col2-small-offset  { margin-left: percentage(2, $grid-columns); }
+  .col3-small-offset  { margin-left: percentage(3, $grid-columns); }
+  .col4-small-offset  { margin-left: percentage(4, $grid-columns); }
+  .col5-small-offset  { margin-left: percentage(5, $grid-columns); }
+  .col6-small-offset  { margin-left: percentage(6, $grid-columns); }
+  .col7-small-offset  { margin-left: percentage(7, $grid-columns); }
+  .col8-small-offset  { margin-left: percentage(8, $grid-columns); }
+  .col9-small-offset  { margin-left: percentage(9, $grid-columns); }
+  .col10-small-offset { margin-left: percentage(10, $grid-columns); }
+  .col11-small-offset { margin-left: percentage(11, $grid-columns); }
+
+
+  .col12, .col12-small {
+    padding-right: ($grid-gutter-width / 2);
+  }
+
+
+}
+
+
+// Regular desktop grid
+//
+// Columns, offsets, pushes, and pulls for the desktop device range.
+//
+// Note that `.col12` doesn't get floated on purpose—there's no need since
+// it's full-width.
+
+@media $media-min-desktop {
+  .container {
+    max-width: $screen-max-desktop;
+  }
+  .col1,
+  .col2,
+  .col3,
+  .col4,
+  .col5,
+  .col6,
+  .col7,
+  .col8,
+  .col9,
+  .col10,
+  .col11 {
+    float: left;
+  }
+  .col1  { width: percentage(1, $grid-columns); }
+  .col2  { width: percentage(2, $grid-columns); }
+  .col3  { width: percentage(3, $grid-columns); }
+  .col4  { width: percentage(4, $grid-columns); }
+  .col5  { width: percentage(5, $grid-columns); }
+  .col6  { width: percentage(6, $grid-columns); }
+  .col7  { width: percentage(7, $grid-columns); }
+  .col8  { width: percentage(8, $grid-columns); }
+  .col9  { width: percentage(9, $grid-columns); }
+  .col10 { width: percentage(10, $grid-columns); }
+  .col11 { width: percentage(11, $grid-columns); }
+  .col12 { width: 100%; }
+
+  // Push and pull columns for source order changes
+  .col0-push  { left: auto; }
+  .col1-push  { left: percentage(1, $grid-columns); }
+  .col2-push  { left: percentage(2, $grid-columns); }
+  .col3-push  { left: percentage(3, $grid-columns); }
+  .col4-push  { left: percentage(4, $grid-columns); }
+  .col5-push  { left: percentage(5, $grid-columns); }
+  .col6-push  { left: percentage(6, $grid-columns); }
+  .col7-push  { left: percentage(7, $grid-columns); }
+  .col8-push  { left: percentage(8, $grid-columns); }
+  .col9-push  { left: percentage(9, $grid-columns); }
+  .col10-push { left: percentage(10, $grid-columns); }
+  .col11-push { left: percentage(11, $grid-columns); }
+
+  .col0-pull  { right: auto; }
+  .col1-pull  { right: percentage(1, $grid-columns); }
+  .col2-pull  { right: percentage(2, $grid-columns); }
+  .col3-pull  { right: percentage(3, $grid-columns); }
+  .col4-pull  { right: percentage(4, $grid-columns); }
+  .col5-pull  { right: percentage(5, $grid-columns); }
+  .col6-pull  { right: percentage(6, $grid-columns); }
+  .col7-pull  { right: percentage(7, $grid-columns); }
+  .col8-pull  { right: percentage(8, $grid-columns); }
+  .col9-pull  { right: percentage(9, $grid-columns); }
+  .col10-pull { right: percentage(10, $grid-columns); }
+  .col11-pull { right: percentage(11, $grid-columns); }
+
+  // Offsets
+  .col0-offset  { margin-left: 0; }
+  .col1-offset  { margin-left: percentage(1, $grid-columns); }
+  .col2-offset  { margin-left: percentage(2, $grid-columns); }
+  .col3-offset  { margin-left: percentage(3, $grid-columns); }
+  .col4-offset  { margin-left: percentage(4, $grid-columns); }
+  .col5-offset  { margin-left: percentage(5, $grid-columns); }
+  .col6-offset  { margin-left: percentage(6, $grid-columns); }
+  .col7-offset  { margin-left: percentage(7, $grid-columns); }
+  .col8-offset  { margin-left: percentage(8, $grid-columns); }
+  .col9-offset  { margin-left: percentage(9, $grid-columns); }
+  .col10-offset { margin-left: percentage(10, $grid-columns); }
+  .col11-offset { margin-left: percentage(11, $grid-columns); }
+}
+
+

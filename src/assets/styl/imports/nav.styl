@@ -1,0 +1,144 @@
+// Navigation
+// -------------------------
+.nav {
+    position: absolute;
+    width: 100%;
+    top:auto;
+    z-index: $z-nav;
+    background: transparent;
+
+    // margin-top:-80px;
+
+}
+
+#nav .navigation .item {
+    background:rgba(#371c29, 0.6);
+    transition: background-color 500ms;
+}
+
+#nav .row {
+    margin-left:0;
+    margin-right:0;
+}
+
+#nav .col12 {
+    padding-left:0;
+}
+
+#nav .navigation .selected.item,  #nav .navigation .item:hover, .navigation .item:hover {
+    background:rgba(#905a7b,0.6);
+}
+
+.navigation {
+
+
+    ul {
+        clearfix();
+    }
+
+    .item {
+        width: 20%;
+        float: left;
+        height: 80px;
+        text-align: center;
+
+
+        a,span.nolink {
+            padding-top: 10px;
+            text-decoration: none;
+            display: block;
+
+            .item-title {
+                display: block;
+                font-size:22px;
+                line-height:23px;
+                font-family: $title-font-family;
+                color: #ebe5d1;
+            }
+
+            .subheading {
+                font-family: $subtitle-font-family;
+                text-transform:uppercase;
+                font-size:12px;
+                line-height:30px;
+                display: block;
+                transition: color 500ms;
+                color: #a29776;
+            }
+        }
+    }
+
+    .selected.item,
+    .item:hover  {
+
+
+        .subheading {
+            color:#c97dab;
+        }
+    }
+}
+
+
+
+@media $media-medium-nav {
+    .navigation .item a {
+        .item-title {
+            font-size:25px;
+            line-height:26px;
+        }
+
+        .subheading {
+            font-size:14px;
+        }
+    }
+
+
+}
+
+@media $media-big-nav {
+    .navigation .item a {
+        .item-title {
+            font-size:28px;
+            line-height:30px;
+        }
+    }
+}
+
+// .navigation:before {
+//     margin-top: -1px;
+//     height: 2px;
+//     width: 0;
+//     display: block;
+//     position: absolute;
+//     content: '';
+//     background: $red;
+//     transition width 600ms;
+// }
+// .navigation.progress1:before {
+//     width: 16%;
+// }
+// .navigation.progress2:before {
+//     width: 33%;
+// }
+// .navigation.progress3:before {
+//     width: 49%;
+// }
+// .navigation.progress4:before {
+//     width: 66%;
+// }
+// .navigation.progress5:before {
+//     width: 66%;
+// }
+// .navigation.progress6:before {
+//     width: 66%;
+// }
+
+// Nav when scrolled
+.nav-scroll.nav {
+    background: rgba($lightGrey, 0.95);
+
+    .item a .item-title,
+    .item a .subheading {
+        color: $yellow;
+    }
+}

@@ -1,0 +1,135 @@
+<!doctype html>
+<html class="no-js" lang="en-GB">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>video</title>
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <script type="text/javascript">
+            // Async Typekit FTW!
+            (function(d) {
+                var config = {
+                    kitId: 'btt4gyn',
+                    scriptTimeout: 3000
+                },
+                h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+            })(document);
+        </script>
+    </head>
+    <body id="sitename.com">
+
+        <!-- inline style height/width and element height/width to fix cross browser bullshit -->
+        <div>
+            <video id="player" width="100%" height="100%" poster="http://www.fillmurray.com/640/360">
+                <source type="application/x-mpegURL" src="http://player.vimeo.com/external/99133095.m3u8?p=high,standard,mobile&s=2f0e0fbf1ba40425f479bff6153394e2" />
+                <source type="video/mp4" src="http://player.vimeo.com/external/99133095.sd.mp4?s=301078d07b702cef93648f654e827f01" />
+            </video>
+        </div>
+
+        <br /> Time: <span id="current-time"></span>
+
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/mediaelement/2.13.2/js/mediaelement-and-player.min.js"></script>
+
+        <script>
+
+            var getDeviceSize = function () {
+
+                var size = 'medium'; // default
+
+                // We are only using matchMedia to check for device width when offereing
+                // progressive download files. If the browser doesn't support matchMedia
+                // it's likely to be an older browser and more likley have flash where we
+                // use HLS streaming
+
+                // This is why I didn't add Paul Irish's matchMedia pollyfill
+
+                if (window.matchMedia) {
+
+                    var isSmall =  window.matchMedia('(max-width: 640px)').matches,
+                        isMedium = window.matchMedia('(max-width: 767px)').matches,
+                        isLarge =  window.matchMedia('(min-width: 1000px)').matches;
+
+                    if (isSmall) {
+                        size = 'small'
+                    } else if (isSmall && isMedium && !isLarge) {
+                        size = 'medium'
+                    } else if (isLarge) {
+                        size = 'large'
+                    }
+
+                }
+
+                return size;
+            }
+
+
+
+
+
+
+            $(document).ready(function () {
+
+                var player = new MediaElementPlayer('#player', {
+
+                    // "auto_plugin" means it defaults to flash/silverlight even if html5 is available
+                    mode: 'auto_plugin',
+
+                    pluginPath: '/assets/plugins/',
+
+                    defaultVideoWidth: '100%',
+
+                    defaultVideoHeight: '100%',
+
+                    success: function (mediaElement, domObject) {
+
+                        console.log('Video plugin:', mediaElement.pluginType);
+
+                        // We use flash/silverlight by default because it allows us to use
+                        // HLS streaming from Vimeo which does all the nice bandwidth checking etc
+
+                        // When flash or sliverlight is not avaliable we will give them a s/m/l
+                        // progressive download file depending on the device width
+
+                        if (mediaElement.pluginType === 'native') {
+
+                            var streams = {
+                                small: 'http://player.vimeo.com/external/99133095.sd.mp4?s=301078d07b702cef93648f654e827f01',
+                                medium: 'http://player.vimeo.com/external/99133095.mobile.mp4?s=e7e341256916a239bd924558f1269853',
+                                large: 'http://player.vimeo.com/external/99133095.hd.mp4?s=f0281538a57ea4dc44fa18687cacf78a'
+                            };
+
+                            var currentStream = streams[getDeviceSize()];
+
+                            // Start progressive download stream
+                            mediaElement.setSrc(currentStream);
+                        }
+
+                        // play the video
+                        mediaElement.play();
+                        mediaElement.setVolume(0);
+
+                        mediaElement.addEventListener('timeupdate', function(e) {
+                            document.getElementById('current-time').innerHTML = mediaElement.currentTime;
+                        }, false);
+
+                    }
+                });
+
+            });
+
+
+            // For Dev
+            $(window).resize(function() {
+
+                console.log('getDeviceSize', getDeviceSize());
+
+            });
+
+        </script>
+
+    </body>
+</html>

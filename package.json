@@ -1,0 +1,65 @@
+{
+  "name": "Pals",
+  "version": "0.0.1",
+  "description": "Pals United",
+  "dependencies": {
+    "express": "~4.8.3",
+    "morgan": "~1.2.2",
+    "request": "~2.40.0"
+  },
+  "devDependencies": {
+    "gulp": "~3.8.7",
+    "gulp-nodemon": "~1.0.4",
+    "gulp-preprocess": "~1.1.1",
+    "gulp-stylus": "~1.3.0",
+    "nib": "~1.0.3",
+    "gulp-rimraf": "~0.1.0",
+    "run-sequence": "~0.3.6",
+    "gulp-rename": "~1.2.0",
+    "gulp-gitinfo": "0.0.4",
+    "event-stream": "~3.1.7",
+    "gulp-util": "~3.0.0",
+    "gulp-htmlmin": "~0.1.3",
+    "gulp-filter": "~1.0.0",
+    "gulp-concat": "~2.3.4",
+    "jquery": "~2.1.1",
+    "browserify": "~4.2.3",
+    "vinyl-source-stream": "~0.1.1",
+    "backbone": "~1.1.2",
+    "gulp-uglify": "~0.3.1",
+    "vinyl-buffer": "0.0.0",
+    "node-underscorify": "0.0.11",
+    "underscore": "~1.6.0",
+    "browserify-shim": "~3.6.0",
+    "velocity-animate": "~0.11.7"
+  },
+  "browser": {
+    "mejs": "./src/assets/scripts/lib/mediaelement-and-player.js",
+    "touchswipe": "./src/assets/scripts/lib/jquery.touchswipe.js",
+    "touchpunch": "./src/assets/scripts/lib/touchpunch.js",
+    "jqueryui": "./src/assets/scripts/lib/jquery-ui.min.js"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "mejs": {
+      "depends": "jquery",
+      "exports": "mejs"
+    },
+    "jqueryui": {
+      "depends": "jquery",
+      "exports": "jqueryui"
+    },
+    "touchswipe": {
+      "depends": "jquery",
+      "exports": "touchswipe"
+    },
+    "touchpunch": {
+      "depends": ["jquery", "jqueryui"],
+      "exports": "touchpunch"
+    }
+  }
+}
