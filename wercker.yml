@@ -9,3 +9,10 @@ build:
     - npm-test
     - hgen/gulp:
         tasks: production
+deply:
+    steps:
+    - wercker/s3sync@0.1.0-alpha2:
+        key-id: $aws_key
+        key-secret: $aws_secret
+        bucket-url: test-wercker
+        source-dir: dist/production
