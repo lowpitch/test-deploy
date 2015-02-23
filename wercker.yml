@@ -14,5 +14,5 @@ deploy:
     - wercker/s3sync@0.1.0-alpha2:
         key-id: $aws_key
         key-secret: $aws_secret
-        bucket-url: s3://test-wercker
+        bucket-url: s3://testdeploy.lowpitch.com
         source-dir: dist/production/
