@@ -15,4 +15,4 @@ deploy:
         key-id: $aws_key
         key-secret: $aws_secret
         bucket-url: s3://test-wercker
-        source-dir: dist/production
+        source-dir: dist/production/
