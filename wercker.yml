@@ -15,4 +15,4 @@ deply:
         key-id: $aws_key
         key-secret: $aws_secret
         bucket-url: test-wercker
-        source-dir: dist/production
+#        source-dir: dist/production
